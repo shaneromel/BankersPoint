@@ -1,0 +1,4 @@
+<div [ngClass]="courses?.length==0 ? 'text-center' : ''" id="grids">
+        <h1 *ngIf="courses?.length==0" >Sorry, you haven't purchased any courses yet.</h1>
+</div>
+<ngx-loading [show]="loading" ></ngx-loading>

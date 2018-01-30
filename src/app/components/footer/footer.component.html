@@ -1,0 +1,76 @@
+<!-- <div class="container-fluid" id="footer">
+    <div class="container" id="footer-cont">
+      <div class="row">
+        <div class="col-sm-4">
+          <h4>Address</h4>
+          <p>{{contact?.address}}</p>
+        </div>
+        <div class="col-sm-4">
+          <h4>Quick links</h4>
+          <ul>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Refund policy</a></li>
+            <li><a href="#">Pricing policy</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-4">
+          <h4>Contact us</h4>
+          <ul>
+            <li>Call us  {{contact?.phone}}</li>
+            <li>Email   {{contact?.email}}</li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <p style="text-align:center; font-size:16px;">Copyright © 2017 Bankers Point</p>
+    </div>
+  </div> -->
+
+  <div class="footer-top" id="footer">
+      <div class="container" id="footer-cont">
+      <div class="row">
+        <div class="col">
+            <h3>Address</h3>
+          
+              <div style="margin-left: 0;color:white;" id="address" class="contact-btm">
+                
+                
+                
+                
+              </div>
+              
+              <div class="clearfix"></div>
+  
+        </div>
+        <div class="col">
+          <h3>Quick links</h3>
+              <p><a [routerLink]="['/quicklink','terms']" >Terms of service</a></p>
+              <p><a [routerLink]="['/quicklink','privacy-policy']" >Privacy policy</a></p>
+              <p><a [routerLink]="['/quicklink','refund-policy']" >Refund policy</a></p>
+              <p><a [routerLink]="['/quicklink','pricing-policy']" >Pricing policy</a></p>
+          </div>
+        <div class="col">
+          <h3>Social links</h3>
+          <div class="contact-btm">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <p>+91{{contact?.phone}}</p>
+            <div class="contact-btm">
+            </div>
+              <i style="color:white;" class="fa fa-envelope-o" aria-hidden="true"></i>
+              <p><a href="mailto:{{contact?.email}}">{{contact?.email}}</a></p>
+            </div>
+          <div class="w3ls-social-icons">
+              <a class="facebook" href=" https://www.facebook.com/groups/bankerspointcoaching/"><i class="fa fa-facebook"></i></a>
+              <a class="youtube" href="https://www.youtube.com/bankerspoint"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+          </div>
+        </div>
+          <div class="clearfix"></div>
+      </div>
+  
+      </div>
+    </div>
+
+    <div class="copy-right">
+				<p> Copyright &copy; 2018 Bankers Point | Design by <a href="http://syndicatesera.com">Syndicates Era</a></p>
+		</div>

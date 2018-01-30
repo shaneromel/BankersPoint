@@ -1,0 +1,34 @@
+<ngx-loading [show]="loading" [config]="{fullScreenBackdrop:true}" ></ngx-loading>
+
+<div id="category-title" class="container-fluid">
+  <div id="category-title-cont" class="container">
+    <h1>{{selectedCategory}}</h1>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div id="categoryCourses-cont" class="container">
+    <div class="row">
+      <div class="col-md-9 offset-md-3">
+          <div class="container">
+            <h3>Explore Courses</h3>            
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+          <div class="list-group">
+              <a [routerLink]="['../SSC']" routerLinkActive #rla1="routerLinkActive" [ngClass]="rla1.isActive ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action' ">
+                SSC
+              </a>
+              <a [routerLink]="['../Banking']" routerLinkActive #rla2="routerLinkActive" [ngClass]="rla2.isActive ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action' ">Banking</a>
+            </div>
+      </div>
+      <div id="categoryCourses-list" class="col-md-9">
+        <div class="container" id="grids">
+    
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
