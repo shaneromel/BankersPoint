@@ -42,6 +42,7 @@ export class ReviewsComponent implements OnInit {
     this.rate=new Array();
     this.rateVoid=new Array();
     this.avgRatings=new Array(5);
+    this.ratingsAvg=0;
     for(var i=0;i<5;i++){
       this.avgRatings[i]={};
     }
@@ -58,24 +59,26 @@ export class ReviewsComponent implements OnInit {
       this.ratingSubscription=this.courseService.getRating(this.course_id).subscribe(ratings=>{
         this.ratings=new Array();
         var s=0, i=0;
-        ratings.forEach(rating=>{
-          s=s+rating.rating;
-        });
-        this.ratingsAvg=s/ratings.length;
-        this.ratingsWhole=Array(Math.floor(this.ratingsAvg)).fill(1);
-        this.ratingsVoid=Array(5-Math.floor(this.ratingsAvg)).fill(1);
-
-        var avg,s=0;
-        for(var i=1;i<=5;i++){
+        if(ratings.length>0){
           ratings.forEach(rating=>{
-            if(rating.rating==i){
-              s=s+1;
-            }
+            s=s+rating.rating;
           });
-          avg=Math.floor(s/ratings.length*100);
-          this.avgRatings[i-1].width=avg.toString()+"%";
-          console.log(this.avgRatings[i-1]);
-          s=0;
+          
+          this.ratingsAvg=s/ratings.length;
+          this.ratingsWhole=Array(Math.floor(this.ratingsAvg)).fill(1);
+          this.ratingsVoid=Array(5-Math.floor(this.ratingsAvg)).fill(1);
+  
+          var avg=0,s=0;
+          for(var i=1;i<=5;i++){
+            ratings.forEach(rating=>{
+              if(rating.rating==i){
+                s=s+1;
+              }
+            });
+            avg=Math.floor(s/ratings.length*100);
+            this.avgRatings[i-1].width=avg.toString()+"%";
+            s=0;
+          }
         }
 
         students.forEach(student=>{

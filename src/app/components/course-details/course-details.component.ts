@@ -71,6 +71,7 @@ export class CourseDetailsComponent implements OnInit {
     this.avgRatings=new Array();
     this.videos=0;
     this.isSubscribed=false;
+    this.ratingExact=0;
   }
 
   ngOnInit() {
@@ -92,7 +93,9 @@ export class CourseDetailsComponent implements OnInit {
       querySnapshot.forEach(doc=>{
         s=s+doc.data().rating;
       });
-      this.ratingExact=s/querySnapshot.size;
+      if(s>0){
+        this.ratingExact=s/querySnapshot.size;
+      }
       this.rating=Array(Math.floor(this.ratingExact)).fill(1);
       this.rating_void=Array(5-Math.floor(this.ratingExact)).fill(1);
     });
@@ -157,7 +160,11 @@ export class CourseDetailsComponent implements OnInit {
   pay(){
     this.authService.afAuth.auth.onAuthStateChanged(user=>{
       if(user){
-        window.location.replace("http://syndicatesera.com/payment.php?purpose="+this.course.name+"&amount="+this.course.price_offer+"&email="+user.email+"&course_id="+this.course.id+"&type=course");
+        var purpose=this.course.name;
+        if(purpose.length>29){
+          purpose=purpose.substring(0,29);
+        }
+        window.location.replace("http://syndicatesera.com/payment.php?purpose="+purpose+"&amount="+this.course.price_offer+"&email="+user.email+"&course_id="+this.course.id+"&type=course");
       }else{
         this.router.navigate(['/signin']);
       }
