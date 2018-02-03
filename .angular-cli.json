@@ -22,7 +22,6 @@
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.css",
         "../node_modules/font-awesome/css/font-awesome.css",
-        "../node_modules/videogular2/fonts/videogular.css",
         "../node_modules/html5-device-mockups/dist/device-mockups.min.css"
       ],
       "scripts": [

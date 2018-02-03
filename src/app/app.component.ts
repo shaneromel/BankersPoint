@@ -17,7 +17,7 @@ export class AppComponent {
 
   ngOnInit(){
     if(this.deviceService.device==="android"){
-      window.location.replace("https://play.google.com/store/apps/details?id=com.gmonetix.pedals");
+      window.location.replace("https://bankerspoint.org/app");
     }
   }
 

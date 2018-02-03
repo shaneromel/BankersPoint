@@ -22,7 +22,7 @@ export class OpeningDialogComponent implements OnInit {
   }
 
   openPlayStore(){
-    window.location.replace("https://google.co.in");
+    window.location.replace("https://play.google.com/store/apps/details?id=com.gmonetix.bankerspoint");
   }
 
 }

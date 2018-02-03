@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { CourseService } from '../../services/course.service';
 import { InstructorService } from '../../services/instructor.service';
 import { CourseBundleService } from '../../services/course-bundle.service';
+import { AuthService } from '../../services/auth.service';
 
 import { Course } from '../../models/course';
 import { Instructor } from '../../models/instructor';
@@ -51,9 +52,17 @@ export class CoverComponent implements OnInit {
   courseBundleSubscription:Subscription;
   courseBundleCoursesSubscription:Subscription;
 
-  constructor(private courseService:CourseService, private router:Router, private instructorService:InstructorService, private courseBundleService:CourseBundleService, private dialog:MatDialog) {
+  authState:boolean;
+
+  constructor(private courseService:CourseService, private router:Router, private instructorService:InstructorService, private courseBundleService:CourseBundleService, private dialog:MatDialog, private authService:AuthService) {
     this.banners=new Array();
-    
+    authService.afAuth.auth.onAuthStateChanged(user=>{
+      if(user){
+        this.authState=true;
+      }else{
+        this.authState=false;
+      }
+    })
    }
 
   ngOnInit() {

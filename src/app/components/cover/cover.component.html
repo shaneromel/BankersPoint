@@ -21,26 +21,28 @@
   </a>
 </div>
 
-<div id="combo-packs" class="container-fluid">
-  <div class="container coverContainer">
-    <h3 class="containerHead text-primary" ><strong>Combo Packs</strong></h3>
-    <div class="row">
-      <div id="grids-bundle" class="container" >
-        
+<div id="courses">
+  <div id="combo-packs" class="container-fluid">
+    <div class="container coverContainer">
+      <h3 class="containerHead text-primary" ><strong>Combo Packs</strong></h3>
+      <div class="row">
+        <div id="grids-bundle" class="container" >
+          
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<div id="featuredCourses" class="container-fluid">
-  <div class="container coverContainer">
-    <h1 class="containerHead text-primary" style="font-weight:lighter;">Courses</h1>
-    <div class="row">
-        <div id="grids" class="container">
-        </div>
-        <div style="text-align:center;" class="container">
-          <a [routerLink]="['/course-listings']" class="btn btn-warning">Show more</a>
-        </div>
+  
+  <div id="featuredCourses" class="container-fluid">
+    <div class="container coverContainer">
+      <h1 class="containerHead text-primary" style="font-weight:lighter;">Courses</h1>
+      <div class="row">
+          <div id="grids" class="container">
+          </div>
+          <div style="text-align:center;" class="container">
+            <button [routerLink]="['/course-listings']" class="btn btn-warning">Show more</button>
+          </div>
+      </div>
     </div>
   </div>
 </div>
@@ -156,14 +158,14 @@
 
 <div class="container-fluid coverContainer" id="salient" >
   <div class="row">
-        <div style="background-image:url(https://s3-ap-southeast-1.amazonaws.com/learnyst/assets/schools/learnyst/resources/backgrounds/solids/16.jpg); color:white;" class="col-md-4">
+        <div style="background-image:url(../../../assets/16.jpg); color:white;" class="col-md-4">
           <div class="container">
             <h3>Discussion forum</h3>
             <p>Get your doubts resolved by asking them in the Discussion forum. You can ask question on a video at particular time instance. We will personally look at each student question and provide detailed
                 explanation.</p>
           </div>
         </div>
-        <div style="background-image: url(https://s3-ap-southeast-1.amazonaws.com/learnyst/assets/schools/learnyst/resources/backgrounds/solids/17.jpg); color:white;" class="col-md-4">
+        <div style="background-image: url(../../../assets/17.jpg); color:white;" class="col-md-4">
             <div class="container">
               <h3>Constant Comunication</h3>
               <p>Constant Comunication
@@ -172,7 +174,7 @@
                   experience with us with success-oriented and focused study material.</p>
             </div>
         </div>
-        <div style="background-image: url(https://s3-ap-southeast-1.amazonaws.com/learnyst/assets/schools/learnyst/resources/backgrounds/solids/18.jpg);" class="col-md-4">
+        <div style="background-image: url(../../../assets/18.jpg);" class="col-md-4">
             <div class="container">
               <h3>Learn & Achieve</h3>
               <p>Get your doubts resolved by asking them in the Discussion forum. You can ask question on a video at particular time instance. We will personally look at each student question and provide detailed
@@ -269,7 +271,7 @@
             <div (click)="ourDesc(3)" class="col-md-4">
                 <div class="team-member">
                     <div class="team-img">
-                        <img src="http://bankerspoint.org/uploads/bankerspoint.org/custom/01_i9hc2j2ial6oe0zfr.jpg" alt="team member" class="image img-fluid">
+                        <img src="../../../assets/01_i9hc2j2ial6oe0zfr.jpg" alt="team member" class="image img-fluid">
                     </div>
                     <div class="team-hover">
                         <div class="desk">
@@ -312,78 +314,7 @@
 
 </div>
 
-<!-- <div class="team" id="team">
-    <div class="container">
-      <div class="w3ls-heading">
-        <h3>Our team</h3>
-      </div>
-      <div class="w3-team-grids">
-      <div class="row">
-          <div class="col-md-3 chef agile_team_grid">
-              <div class="agileits_w3layouts_team_grid">
-                <ul class="agileinfo_social_icons">
-                  <li><a href="#" class="w3_agileits_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                  <li><a href="#" class="wthree_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                  <li><a href="#" class="agileinfo_google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                </ul>
-                <img src="https://firebasestorage.googleapis.com/v0/b/bankerspoint-ed327.appspot.com/o/ankit__saini_h3gvat3j1nygfvl5wmi.jpg?alt=media&token=a2f77f12-d60a-4629-824d-33918596d00b" alt=" " class="image img-fluid">
-              </div>
-              <div class="w3-team-head">
-              <h3>Benn bent</h3>
-              <p>professor</p>
-              </div>
-            </div>
-            <div class="col-md-3 chef agile_team_grid">
-              <div class="agileits_w3layouts_team_grid">
-                <ul class="agileinfo_social_icons">
-                  <li><a href="#" class="w3_agileits_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                  <li><a href="#" class="wthree_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                  <li><a href="#" class="agileinfo_google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                </ul>
-                <img src="https://firebasestorage.googleapis.com/v0/b/bankerspoint-ed327.appspot.com/o/anshul_j6h875pnwaucnsdfs9k9%20(1).jpg?alt=media&token=93e165f5-be23-4375-bb3d-3d9bd194c190" alt=" " class="image img-fluid">
-              </div>
-              <div class="w3-team-head">
-              <h3>envo rach</h3>
-              <p>chairman</p>
-            </div>
-            </div>
-            <div class="col-md-3 chef agile_team_grid">
-              <div class="agileits_w3layouts_team_grid">
-                <ul class="agileinfo_social_icons">
-                  <li><a href="#" class="w3_agileits_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                  <li><a href="#" class="wthree_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                  <li><a href="#" class="agileinfo_google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                </ul>
-                <img src="" alt=" " class="image img-fluid">
-              </div>
-              <div class="w3-team-head">
-              <h3>steve Balk</h3>
-              <p>Incharge</p>
-              </div>
-            </div>
-            <div class="col-md-3 chef agile_team_grid">
-              <div class="agileits_w3layouts_team_grid">
-                <ul class="agileinfo_social_icons">
-                  <li><a href="#" class="w3_agileits_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                  <li><a href="#" class="wthree_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                  <li><a href="#" class="agileinfo_google"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                </ul>
-                <img src="../../../assets/anshul_j6h875pnwaucnsdfs9k9.jpg" alt=" " class="image img-fluid">
-              </div>
-              <div class="w3-team-head">
-              <h3>Bewel roy</h3>
-              <p>manager</p>
-              </div>
-            </div>
-            <div class="clearfix"></div>
-      </div>
-      </div>
-  
-  
-    </div>
-  </div> -->
-
-<div class="container-fluid" id="redg" style="color:white; background-image: url(https://s3-ap-southeast-1.amazonaws.com/learnyst/assets/schools/learnyst/resources/backgrounds/business/13.jpg);" >
+<div *ngIf="!authState" class="container-fluid" id="redg" style="color:white; background-image: url(../../../assets/13.jpg);" >
   <div class="container" id="redg-cont">
     <div id="redg-text">
         <h1 style="text-align:center;"><strong>We don't compromise with the best!</strong></h1>

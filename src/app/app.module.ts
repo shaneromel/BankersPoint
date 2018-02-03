@@ -49,11 +49,6 @@ import { CourseBundleDetailsComponent } from './components/course-bundle-details
 import { CourseBundleOverviewComponent } from './components/course-bundle-overview/course-bundle-overview.component';
 import { CourseBundleCoursesComponent } from './components/course-bundle-courses/course-bundle-courses.component';
 
-// import {VgCoreModule} from 'videogular2/core';
-// import {VgControlsModule} from 'videogular2/controls';
-// import {VgOverlayPlayModule} from 'videogular2/overlay-play';
-// import {VgBufferingModule} from 'videogular2/buffering';
-
 import{ LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
 import { Ng2DeviceDetectorModule } from 'ng2-device-detector';
 import { MobileAppComponent } from './components/mobile-app/mobile-app.component';
@@ -62,6 +57,7 @@ import { Ng2PageScrollModule } from 'ng2-page-scroll';
 import { OpeningDialogComponent } from './components/opening-dialog/opening-dialog.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ErrorPaymentComponent } from './components/error-payment/error-payment.component';
 
 const router:Routes=[
   {
@@ -143,6 +139,9 @@ const router:Routes=[
         path:'courses', component:CourseBundleCoursesComponent
       }
     ]
+  },
+  {
+    path:'error-payment', component:ErrorPaymentComponent
   }
 ];
 
@@ -171,7 +170,8 @@ const router:Routes=[
     CourseBundleDetailsComponent,
     CourseBundleOverviewComponent,
     CourseBundleCoursesComponent,
-    OpeningDialogComponent
+    OpeningDialogComponent,
+    ErrorPaymentComponent
   ],
   entryComponents:[
     OpeningDialogComponent
@@ -180,15 +180,12 @@ const router:Routes=[
     BrowserModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(),
     AngularFirestoreModule,
     FormsModule,
     RouterModule.forRoot(router),
     AngularFireAuthModule,
     MatGridListModule,
-    // VgCoreModule,
-    // VgControlsModule,
-    // VgOverlayPlayModule,
-    // VgBufferingModule,
     MatCardModule,
     MatTabsModule,
     MatDialogModule,
