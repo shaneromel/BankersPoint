@@ -33,7 +33,7 @@
             <button (click)="pay()" style="cursor:pointer;" class="btn btn-success btn-block">Buy now</button>
           </div>
 					<div *ngIf="isFree||isSubscribed&&days<=course.validity" style="padding:10px;" class="col-lg-3">
-						<a [routerLink]="['/classroom',id]" class="btn btn-secondary btn-block">Start learning</a>
+						<a [routerLink]="['/classroom',id]" class="btn btn-warning btn-block">Start learning</a>
           </div>
           <div *ngIf="isSubscribed&&days>course.validity" style="padding:10px" class="col-lg-3">
             <button (click)="pay()" class="btn btn-success btn-block">Renew</button>

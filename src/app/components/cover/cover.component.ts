@@ -157,13 +157,13 @@ export class CoverComponent implements OnInit {
 
   }
 
-  ngAfterViewInit(){
-    setTimeout(()=>{
-      var dialogRef=this.dialog.open(OpeningDialogComponent,{
-        width:'500px'
-      })
-    },3000);
-  }
+  // ngAfterViewInit(){
+  //   setTimeout(()=>{
+  //     var dialogRef=this.dialog.open(OpeningDialogComponent,{
+  //       width:'500px'
+  //     })
+  //   },3000);
+  // }
 
   ourDesc(n:number){
     $("#modal-"+n).modal("toggle");

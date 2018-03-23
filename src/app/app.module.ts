@@ -181,7 +181,7 @@ const router:Routes=[
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence(),
-    AngularFirestoreModule,
+    
     FormsModule,
     RouterModule.forRoot(router),
     AngularFireAuthModule,

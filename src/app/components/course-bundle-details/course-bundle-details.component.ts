@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import * as firebase from 'firebase';
 
@@ -32,7 +32,7 @@ export class CourseBundleDetailsComponent implements OnInit {
   couponApplied:boolean;
   origPrice:number;
 
-  constructor(private courseBundleService:CourseBundleService, private route:ActivatedRoute, private authService:AuthService) {
+  constructor(private courseBundleService:CourseBundleService, private route:ActivatedRoute, private authService:AuthService, private router:Router) {
     this.couponApplied=false;
     this.myCourseBundles=new Array();
    }
@@ -84,7 +84,13 @@ export class CourseBundleDetailsComponent implements OnInit {
   pay(){
     this.authService.afAuth.auth.onAuthStateChanged(user=>{
       if(user){
-        window.location.replace("http://syndicatesera.com/payment.php?purpose="+this.courseBundle.name+"&amount="+this.courseBundle.price_offer+"&email="+user.email+"&course_id="+this.courseBundle.id+"&type=bundle");
+        var purpose=this.courseBundle.name;
+        if(purpose.length>29){
+          purpose=purpose.substring(0,29);
+        }
+        window.location.replace("https://bankerspoint.org/payment.php?purpose="+purpose+"&amount="+this.courseBundle.price_offer+"&email="+user.email+"&course_id="+this.courseBundle.id+"&type=bundle");
+      }else{
+        this.router.navigate(['/signin']);
       }
     })
   }
