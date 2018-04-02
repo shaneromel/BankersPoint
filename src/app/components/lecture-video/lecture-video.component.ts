@@ -108,7 +108,7 @@ export class LectureVideoComponent implements OnInit {
     }
     var video;
 
-    this.requestSubscription=this.http.get<Otp>("https://bankerspoint.org/server/api/video/"+video_id).subscribe(response=>{
+    this.requestSubscription=this.http.get<Otp>("https://bankerspoint.herokuapp.com/video/"+video_id).subscribe(response=>{
       video = new VdoPlayer({
         otp: response.otp,
         playbackInfo: btoa(JSON.stringify({
